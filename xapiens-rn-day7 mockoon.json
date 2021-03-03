@@ -1,0 +1,297 @@
+{
+    "source": "mockoon:1.11.0",
+    "data": [
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 13,
+                "name": "http://enroll.refactory.id/",
+                "endpointPrefix": "",
+                "latency": 0,
+                "port": 3000,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "Mockup API untuk url http://enroll.refactory.id/ endpoint \"/register\"",
+                        "method": "post",
+                        "endpoint": "register",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\": \"EMPTY\",\n  \"code\": 200,\n  \"messages\": \"Registrasi gagal! Pastikan data nama, e-mail, No-HP, dan password terisi.\",\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Empty Form",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\": \"SUCCESS\",\n  \"code\": 200,\n  \"messages\": \"Registrasi berhasil!\",\n  \"data\":\n  [\n    \"nama\": \"Rabbid\",\n    \"email\": \"rabbid@yahoo.com\",\n    \"no_hp\": 555444,\n    \"password\": ********,\n  ]\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Successful Register",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "body",
+                                        "modifier": "nama",
+                                        "value": "Rabbid",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "email",
+                                        "value": "rabbid@yahoo.com",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "nohp",
+                                        "value": "123",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "password",
+                                        "value": "abc",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\": \"FAILURE\",\n  \"code\": 200,\n  \"messages\": \"Registrasi gagal! Data Nama, e-mail, dan No.HP sudah pernah terdaftar.\",\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Already Registered",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "body",
+                                        "modifier": "nama",
+                                        "value": "John",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "email",
+                                        "value": "john@yahoo.com",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "nohp",
+                                        "value": "000",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "password",
+                                        "value": "xyz",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "Mockup API untuk url http://enroll.refactory.id/ endpoint \"/login\"",
+                        "method": "post",
+                        "endpoint": "login",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\": \"EMPTY\",\n  \"code\": 200,\n  \"messages\": \"Login gagal! Harap isi form login terlebih dahulu\",\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Empty Form",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\": \"SUCCESS\",\n  \"code\": 200,\n  \"messages\": \"Login berhasil!\",\n  \"data\":\n  [\n    \"nama\": \"Rabbid\",\n    \"email\": \"rabbid@yahoo.com\",\n  ]\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Successful Login",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "body",
+                                        "modifier": "email",
+                                        "value": "rabbid@yahoo.com",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "password",
+                                        "value": "abc",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\": \"FAILURE\",\n  \"code\": 200,\n  \"messages\": \"Login gagal! E-mail atau Password salah.\",\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Unsuccessful Login",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "body",
+                                        "modifier": "email",
+                                        "value": "rabbid@yahoo.com",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "password",
+                                        "value": "xyz",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "Mockup API untuk url http://enroll.refactory.id/ endpoint \"/course\"",
+                        "method": "get",
+                        "endpoint": "course",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\": \"SUCCESS\",\n  \"code\": 200,\n  \"message\": \"Course berhasil terload.\",\n  \"data\":\n  [\n    {\n      \"course\": \"Belajar React Native\",\n      \"tanggal\": \"03-Maret-2021\",\n      \"by\": \"Saya\"\n    },\n    {\n      \"course\": \"Belajar NodeJS\",\n      \"tanggal\": \"04-Maret-2021\",\n      \"by\": \"Kamu\"\n    },\n    {\n      \"course\": \"Belajar ReactJS\",\n      \"tanggal\": \"05-Maret-2021\",\n      \"by\": \"Dia\"\n    }\n  ],\n  \"last_updated\": \"06-Maret-2021\"\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Successful Loaded",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\": \"FAILED\",\n  \"code\": 500,\n  \"message\": \"Internal Server Error, Try again later.\",\n}",
+                                "latency": 0,
+                                "statusCode": 500,
+                                "label": "Server Error",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "body",
+                                        "modifier": "http-code",
+                                        "value": "500",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "proxyReqHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyResHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ]
+            }
+        }
+    ]
+}

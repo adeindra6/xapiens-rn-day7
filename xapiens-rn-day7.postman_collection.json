@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "deb3b88a-d558-48b2-a283-6c7162d4cbe0",
+		"name": "xapiens-rn-day7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nama",
+							"value": "Rabbid",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "rabbid@yahoo.com",
+							"type": "text"
+						},
+						{
+							"key": "nohp",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "abc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register Gagal (Sudah terdaftar)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama",
+									"value": "John",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "john@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "nohp",
+									"value": "000",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "xyz",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "129"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Mar 2021 23:03:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"status\": \"FAILURE\",\n  \"code\": 200,\n  \"messages\": \"Registrasi gagal! Data Nama, e-mail, dan No.HP sudah pernah terdaftar.\",\n}"
+				},
+				{
+					"name": "Register Berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama",
+									"value": "Rabbid",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rabbid@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "nohp",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Mar 2021 23:01:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"status\": \"SUCCESS\",\n  \"code\": 200,\n  \"messages\": \"Registrasi berhasil!\",\n  \"data\":\n  [\n    \"nama\": \"Rabbid\",\n    \"email\": \"rabbid@yahoo.com\",\n    \"no_hp\": 555444,\n    \"password\": ********,\n  ]\n}"
+				},
+				{
+					"name": "Register gagal (Form belum terisi)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "130"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Mar 2021 09:53:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"status\": \"EMPTY\",\n  \"code\": 200,\n  \"messages\": \"Registrasi gagal! Pastikan data nama, e-mail, No-HP, dan password terisi.\",\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "rabbid@yahoo.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "abc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login Berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "rabbid@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "147"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Mar 2021 23:07:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"status\": \"SUCCESS\",\n  \"code\": 200,\n  \"messages\": \"Login berhasil!\",\n  \"data\":\n  [\n    \"nama\": \"Rabbid\",\n    \"email\": \"rabbid@yahoo.com\",\n  ]\n}"
+				},
+				{
+					"name": "Login Gagal (Password Salah)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "rabbid@yahoo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "xyz",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Mar 2021 23:07:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"status\": \"FAILURE\",\n  \"code\": 200,\n  \"messages\": \"Login gagal! E-mail atau Password salah.\",\n}"
+				},
+				{
+					"name": "Login Gagal (Form belum terisi)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Mar 2021 23:06:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"status\": \"EMPTY\",\n  \"code\": 200,\n  \"messages\": \"Login gagal! Harap isi form login terlebih dahulu\",\n}"
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/course",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"course"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Course Failed (Server Maintenance)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "http-code",
+									"value": "500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/course",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Mar 2021 23:13:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"status\": \"FAILED\",\n  \"code\": 500,\n  \"message\": \"Internal Server Error, Try again later.\",\n}"
+				},
+				{
+					"name": "Course Berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/course",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "440"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Mar 2021 23:08:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"code\": 200,\n    \"message\": \"Course berhasil terload.\",\n    \"data\": [\n        {\n            \"course\": \"Belajar React Native\",\n            \"tanggal\": \"03-Maret-2021\",\n            \"by\": \"Saya\"\n        },\n        {\n            \"course\": \"Belajar NodeJS\",\n            \"tanggal\": \"04-Maret-2021\",\n            \"by\": \"Kamu\"\n        },\n        {\n            \"course\": \"Belajar ReactJS\",\n            \"tanggal\": \"05-Maret-2021\",\n            \"by\": \"Dia\"\n        }\n    ],\n    \"last_updated\": \"06-Maret-2021\"\n}"
+				}
+			]
+		}
+	]
+}
